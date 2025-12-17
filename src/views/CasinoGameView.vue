@@ -1,12 +1,12 @@
 <template>
-  <CasinoGameView />
+    <CasinoGameVue/>
 </template>
 
 <script>
-import CasinoGameView from "./views/CasinoGameView.vue";
+import CasinoGameVue from "@/components/CasinoGame.vue";
 export default {
   components: {
-    CasinoGameView,
+    CasinoGameVue,
   },
 };
 </script>
