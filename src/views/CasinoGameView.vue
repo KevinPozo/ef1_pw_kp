@@ -1,5 +1,5 @@
 <template>
-    <CasinoGameVue/>
+  <CasinoGameVue />
 </template>
 
 <script>

@@ -4,6 +4,7 @@ const consumirApiPokemon = async (idPokemon) => {
   const respuesta = axios
     .get("https://pokeapi.co/api/v2/pokemon/" + idPokemon)
     .then((r) => r.data);
+  console.log(respuesta);
   return respuesta;
 };
 

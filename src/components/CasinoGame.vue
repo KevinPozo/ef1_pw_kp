@@ -21,7 +21,7 @@
           class="imagen-pokemon"
         />
         <div class="nombre-pokemon">
-          {{ mostrarNombres ? pokemon.nombre : "XXXXXXXXX" }}
+          <b>{{ mostrarNombres ? pokemon.nombre : "XXXXXXXXX" }}</b>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ export default {
         const data = await obtenerPokemonFacade(id);
         nuevos.push({
           id: data.id,
-          nombre: data.name.toUpperCase(),
+          nombre: data.name,
           imagen: await obtenerImagenFacade(id),
         });
       }
@@ -106,7 +106,7 @@ export default {
       } else if (this.intentos >= 5) {
         this.juegoTerminado = true;
         this.tipoMensaje = "perdedor";
-        this.mensajeTitulo = "Puntaje: " + this.puntos;
+        this.mensajeTitulo = "Haz utilizado tus " + this.intentos + " intentos";
         this.mensajeTexto = "El juego ha termindo, intentalo nuevamente";
       }
       this.jugando = false;
@@ -154,7 +154,7 @@ export default {
 .imagen-pokemon {
   width: 250px;
   height: 250px;
-  background-color: rgba(148, 148, 148, 0.267);
+  background-color: rgba(158, 156, 156, 0.158);
   border: 2px solid black;
 }
 .btn-jugar,
@@ -175,10 +175,12 @@ export default {
 .ganador {
   color: blue;
   border: 2px solid black;
+  font-size: 20px;
 }
 
 .perdedor {
   color: red;
   border: 2px solid black;
+  font-size: 20px;
 }
 </style>
